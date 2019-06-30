@@ -1,0 +1,32 @@
+Para construir ASDR
+
+1-Escribir una funcion por cada simbolo no terminal de G
+
+2-Cuando este no terminal tenga distintas alternativas en G, para decidir durante su ejecucion
+cual de las producciones utilizar, se optara por aquella alternativa a cuyo conjunto de SD pertenezca el token 
+de preanalisis
+
+En caso de que preanalisis pertenezca a:
+
+SD(alpha1)... proceder segun alpha1
+SD(alpha2)... proceder segun alpha2
+SD(alpha3)... proceder segun alpha3
+FIN
+
+Si el token de preanalisis no pertenece a ninguno de los SD entonces se considerará error sintactico
+
+3-Si una de las alternativas para el no terminal que esta analizando es landa(A->landa) en este
+caso no se hara nada.
+
+4-Para analizar cada alternativa, se aplican diferentes metodologias a los simbolos de la parte derecha
+de la produccion.
+Si: A pertenece a los no terminales se hace una llamada a la funcion correspondiente
+Si: A pertenece a los terminales se llama a la funcion emparejar, con a como parametro
+_____________________________________________________________________________________________________________________
+
+Construir un ASDR para:
+
+S->A->
+A->s
+A->aSc
+A->Landa
